@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BGresume">
+<head>
+	<title>Babu S.R - {{$route.title}} </title>
+	<base href="/guru/resume/" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/ajs/angular.js"></script>
+	<script src="js/ajs/angular-route.min.js"></script>
+</head>
+<body>
+	<!-- directive : ng-preloader { delay: '350' } -->
+	<div id="preloader" ng-preloader="{ 'delay': 500 }">
+	</div>
+
+	<!-- Content -->
+	<section class="content">
+		<div class="container content-container">
+			<div class="row">
+				<div class="col-md-5 col-sm-12 clearfix pad-ex left-section">
+
+					<!--Main-profile  -->
+					<div class="main-profile clearfix" ng-controller="profile" ng-include="profilepage">
+					</div>
+					<!-- End Main Profile -->
+
+					<!--Side Menu  -->
+					<ul class="side-menu clearfix" ng-controller="sidebar" ng-include="menupage">
+					</ul>
+					<!-- End Side Menu -->
+				</div>
+				<div class="col-md-7 col-sm-12 pad-0">
+					<div class="details-wrapper">
+						<!-- Tab Content -->
+						<div class="tab-content pad-ex" ng-view>
+						</div>
+						<!-- End Tab Content -->
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+	<!-- End Content -->
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.mixitup.js"></script>
+	<script src="js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/angularScript.js"></script>
+</body>
+</html>

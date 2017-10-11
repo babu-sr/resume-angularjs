@@ -1,0 +1,20 @@
+
+			<ul class="portfolio-wrapper clearfix">
+				<li ng-repeat="portfolios in portfoliolist" ng-class="portfolios.category" class="portfolio-item mix" data-my-order="{{portfolios.order}}">
+					<div href="#" class="link-box">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<h4>{{portfolios.title}}</h4>
+								<p>{{portfolios.shortdescrip}}</p>
+								<div class="extra-ink">
+									<a ng-show="portfolios.sitelink != ''" ng-href="{{portfolios.sitelink}}" target="_blank"><i class="fa fa-link"></i></a>
+									<a ng-href="{{portfolios.details}}"><i class="fa fa-newspaper-o"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="image">
+							<img alt="{{portfolios.title}}" ng-src="{{portfolios.image}}">
+						</div>
+					</div>							
+				</li>
+			</ul>

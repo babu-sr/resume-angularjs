@@ -1,0 +1,62 @@
+
+<!-- Resume -->
+<div id="resume" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="resume main-container">
+		<div class="details-row row-m-bttom">
+			<span class="number">01</span>
+			<h3 class="row-heading">Career Objectives</h3>
+			<p ng-bind-html="careerobject">{{careerobject}}</p>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">02</span>
+			<h3 class="row-heading">Professional Summary</h3>
+			<ul class="event-list  clearfix">
+				<li class="event" ng-repeat="professional in professionals | filter : {status:'1'} | orderBy : '+orders'">
+					<p>{{professional.point}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">03</span>
+			<h3 class="row-heading">Employers</h3>
+			<ul class="event-list  clearfix">
+				<li class="event" ng-repeat="employer in employers | orderBy : '-to'">
+					<h5>{{employer.position}}</h5>
+					<h6>{{employer.company}} - {{employer.location}}</h6>
+					<div class="date">
+						{{employer.datefrom | limitTo : 10 | date:"MMM/yyyy"}} - {{employer.dateto | limitTo : 10 |  date:"MMM/yyyy"}}
+					</div>
+					<p>{{employer.responsibility}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">04</span>
+			<h3 class="row-heading">Education</h3>
+			<ul class="event-list  clearfix">
+				<li class="event" ng-repeat="education in educations | orderBy : '-to'">
+					<h5>{{education.cource}}</h5>
+					<h6>{{education.college}}</h6>
+					<div class="date">
+						{{education.datefrom}} - {{education.dateto}}
+					</div>
+					<p>{{education.university}}, {{education.location}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">05</span>
+			<h3 class="row-heading">Skills</h3>
+			<ul class="skill-list  clearfix">
+				<li ng-repeat="skill in skillset | filter : {status:'1'} | orderBy : 'orders'">
+					<h4>{{skill.title}}</h4>
+					<span class="percent">{{skill.level}}</span>
+					<div class="skill-bar">
+						 <div class="inner-prcnt" style="width: {{skill.level}}"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End Resume -->

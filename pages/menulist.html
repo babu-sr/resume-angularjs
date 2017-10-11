@@ -1,0 +1,4 @@
+
+<li ng-repeat="sidemenu in menulist" ng-class="{'active': $route.controller == '{{sidemenu.controller}}'}">
+	<a ng-href="{{sidemenu.controller}}"><i ng-class="sidemenu.icon"></i><br><span>{{sidemenu.title}}</span></a>
+</li>

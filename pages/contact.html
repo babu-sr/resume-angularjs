@@ -1,0 +1,69 @@
+
+<style>
+.form-group input.ng-invalid.ng-touched, .form-group textarea.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .form-group input.ng-valid.ng-touched, .form-group textarea.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+</style>
+<!-- Contact -->
+<div id="contact" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="contact main-container">
+		<div class="details-row row-m-bttom">
+			<span class="number">01</span>
+			<h3 class="row-heading">Contact info</h3>
+			<ul class="contact-list  clearfix">
+				<li class="col-md-4 npl">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<h5>Address</h5>
+					<p>{{Data.address}}</p>
+				</li>
+				<li class="col-md-4 pad-l-0">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<h5>Phone</h5>
+					<p>{{Data.phone}}</p>
+				</li>
+				<li class="col-md-4 npr pad-l-0">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					<h5>Mail</h5>
+					<p>{{Data.email}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">02</span>
+			<h3 class="row-heading">Send me a mail</h3>
+			<form name="form" novalidation class="custom-form">
+				<div class="form-group">
+					<span>Name</span>
+					<input type="text" ng-model="enquiry.name" name="eName" required class="form-control">
+					<div ng-show="form.$submitted || form.eName.$touched">
+						<small ng-show="!enquiry.name">Could you tell me your name?</small>
+					</div>
+				</div>
+				<div class="form-group">
+					<span>Email</span>
+					<input type="email" ng-model="enquiry.email" name="eEmail" required  class="form-control">
+					<div ng-show="form.$submitted || form.eEmail.$touched">
+						<small ng-show="form.eEmail.$error.required">How may i reach you?</small>
+						<small ng-show="form.eEmail.$error.email">Invalid email address</small>
+					</div>
+				</div>
+				<div class="form-group">
+					<span>Messege</span>
+					<textarea ng-model="enquiry.message" name="eMessage" ng-minlength="30" ng-maxlength="256" required class="form-control"></textarea>
+					<div ng-show="form.$submitted || form.eMessage.$touched">
+						<small ng-show="form.eMessage.$error.required">Give a message, please.</small>
+						<small ng-show="form.eMessage.$error.minlength">Hey, Atleast type 30 charecter.</small>
+						<small ng-show="form.eMessage.$error.maxlength">Sorry, you exceeded max charecter.</small>
+					</div>
+				</div>
+				<button ng-click="send(form.$valid,form)">SEND</button>
+				{{data}}
+			</form>
+		</div>
+	</div>
+</div>
+<!-- End Contact -->

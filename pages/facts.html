@@ -1,0 +1,79 @@
+
+
+<!--Blog  -->
+<div id="blog" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="blog main-container">
+		<div class="details-row row-m-bttom">
+			<span class="number">01</span>
+			<h3 class="row-heading">My hobbies</h3>
+			<ul class="service-list clearfix">
+				<li class="col-sm-6 npl li-margin text-center" ng-repeat="hobby in hobbies | filter : {status:'1'} | orderBy : '+orders'">
+					<i ng-class="hobby.icon" aria-hidden="true"></i><h4>{{hobby.title}}</h4>
+					<p>{{hobby.content}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">02</span>
+			<h3 class="row-heading">Fun facts</h3>
+			<ul class="fact-list clearfix">
+				<li class="col-sm-4 pad-0 li-margin" ng-repeat="fact in facts | filter : {status:'1'} | orderBy : '+orders'">
+					<i ng-class="fact.icon" class="pull-left"></i>
+					<div class="text-count">
+						<span class="counter">{{fact.count}}</span>
+						<p>{{fact.title}}</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--<div class="details-row row-m-bttom">
+			<span class="number">04</span>
+			<h3 class="row-heading">My Clients</h3>
+			<ul class="client-list clearfix">
+				<li class="col-sm-3 npl li-margin">
+					<img alt="" src="image/client-img1.png">
+				</li>
+				<li class="col-sm-3 npl li-margin">
+					<img alt="" src="image/client-img2.png">
+				</li>
+				<li class="col-sm-3 npl li-margin">
+					<img alt="" src="image/client-img3.png">
+				</li>
+				<li class="col-sm-3 npr li-margin pad-l-0">
+					<img alt="" src="image/client-img4.png">
+				</li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">05</span>
+			<h3 class="row-heading">Clients Testimonial</h3>
+			<div class="testimonial-list clearfix">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+					<ul class="carousel-inner" role="listbox">
+						<li class="item active">
+							<img alt="" class="img-circle" src="image/testi-img.jpg">
+							<div class="name-wrapper">Jason Miller<br><span>CEO, Earth Foundation</span></div>
+							<p><i>Ex mea perpetua argumentum temporibus, ei vim fabellas iracundia. Diceret delenit periculis sit no, porro quando eruditi sit an. Sea te mutat salutandi interesset, alia fabulas sit ne.</i></p>
+						</li>
+						<li class="item">
+							<img alt="" class="img-circle" src="image/testi-img.jpg">
+							<div class="name-wrapper">Jason Miller<br><span>CEO, Earth Foundation</span></div>
+							<p><i>Ex mea perpetua argumentum temporibus, ei vim fabellas iracundia. Diceret delenit periculis sit no, porro quando eruditi sit an. Sea te mutat salutandi interesset, alia fabulas sit ne.</i></p>
+						</li>
+						<li class="item">
+							<img alt="" class="img-circle" src="image/testi-img.jpg">
+							<div class="name-wrapper">Jason Miller<br><span>CEO, Earth Foundation</span></div>
+							<p><i>Ex mea perpetua argumentum temporibus, ei vim fabellas iracundia. Diceret delenit periculis sit no, porro quando eruditi sit an. Sea te mutat salutandi interesset, alia fabulas sit ne.</i></p>
+						</li>
+					</ul>
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					 </ol>
+				</div>	
+			</div>
+		</div>-->
+	</div>
+</div>
+<!-- End Blog -->

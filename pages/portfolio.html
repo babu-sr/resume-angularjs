@@ -1,0 +1,17 @@
+
+
+<!-- Portfolio -->
+<div id="portfo" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="portfolio main-container">
+		<h3 class="row-heading">Portfolio</h3>
+		<div class="filters-menu clearfix">
+			<ul>
+				<li><a class="filter" data-filter="all" href="#">All</a></li>
+				<li ng-repeat="category in categories"><a class="filter" data-filter="{{category.filter}}" href="#">{{category.title}}</a></li>
+			</ul>
+		</div>
+		<div id="container" ng-portfolio="{ 'loadfilter' : 'all' }" portfoliolist = "portfoliolist">		
+		</div>	
+	</div>
+</div>
+<!-- End Portfolio -->

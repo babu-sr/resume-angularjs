@@ -1,0 +1,33 @@
+
+
+<!-- Home -->
+<div id="home" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="about-us main-container">
+		<div class="details-row row-m-bttom">
+			<span class="number">01</span>
+			<h3 class="row-heading">{{objHeading}}</h3>
+			<p ng-bind-html="objContent">{{objContent}}</p>
+			<ul class="abt-focus">
+				<li><span class="st-line">Name :</span><span>{{Data.name}}</span></li>
+				<li><span class="st-line">Date of birth :</span><span>{{Data.dob}}</span></li>
+				<li><span class="st-line">Address :</span><span>{{Data.address}}</span></li>
+				<li><span class="st-line">Gender :</span><span>{{Data.gender}}</span></li>
+				<li><span class="st-line">Marital Status :</span><span>{{Data.maritalstatus}}</span></li>
+				<li><span class="st-line">Nationality :</span><span>{{Data.nationality}}</span></li>
+				<li><span class="st-line">E-mail :</span><span>{{Data.email}}</span></li>
+				<li><span class="st-line">Phone :</span><span>{{Data.phone}}</span></li>
+			</ul>
+		</div>
+		<div class="details-row row-m-bttom">
+			<span class="number">02</span>
+			<h3 class="row-heading">Area Experienced</h3>
+			<ul class="service-list clearfix">
+				<li class="col-sm-6 npl li-margin" ng-repeat="areainterest in areaintersetData | filter : {status:'1'} | orderBy : '+orders'">
+					<i ng-class="areainterest.icon" aria-hidden="true"></i><h4>{{areainterest.title}}</h4>
+					<p>{{areainterest.content}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End Home -->

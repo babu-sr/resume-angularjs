@@ -1,0 +1,23 @@
+
+
+<!--Blog  -->
+<div id="portfolio" class="tab-pane fade in active" ng-scrollbar="{ 'theme': 'dark', 'autoHide': 1 }">
+	<div class="blog main-container">
+		<div class="details-row row-m-bttom">
+			<h3 class="row-heading">Project - {{portfoliodetail.category[0] | capitalize}}</h3>
+			<ul class="blog-list  clearfix">
+				<li>
+					<img alt="{{portfoliodetail.title}}" ng-src="{{portfoliodetail.image}}">
+					<h4>{{portfoliodetail.title}}</h4>
+					<p ng-show="portfoliodetail.description != ''">{{portfoliodetail.description}}</p>
+					<dl ng-repeat="(key, value) in portfoliodetail.projectDetail">
+						<dt>{{key | capitalize}}:</dt>
+						<dd>{{value}}</dd>
+					</dl>
+					<a ng-show="portfoliodetail.sitelink != ''" ng-href="{{portfoliodetail.sitelink}}" target="_blank">Go to page</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End Blog -->

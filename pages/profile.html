@@ -1,0 +1,12 @@
+
+						<img alt="" class="img-circle pro-img" ng-src="{{Data.profilepic}}">
+						<div class="text-wrapper">
+							<h3>{{Data.name}}</h3>
+							<h4>{{Data.position}}</h4>
+							<p>{{Data.shortdescription}}</p>
+							<!--<img class="sign-img" alt="{{Data.name}} Signature" ng-src="{{Data.imgsign}}">
+							<a target="_blank" ng-href="{{Data.resume}}">Download cv</a>-->
+						</div>
+						<div class="social-wrapper">
+							<a ng-repeat="socilalink in socilalinks | filter : {status:'1'} | orderBy : '+orders'" ng-href="{{socilalink.link}}" alt="{{socilalink.title}}" target="_blank"><i ng-class="socilalink.icon"></i></a>
+						</div>
